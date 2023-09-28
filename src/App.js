@@ -33,8 +33,9 @@ function App() {
     if (searchInput === '') {
       setSearchedPokemon(null);
     } else {
+      const lowercaseName = searchInput.toLowerCase(); 
       axios
-        .get(`https://pokeapi.co/api/v2/pokemon/${searchInput.toLowerCase()}`)
+        .get(`https://pokeapi.co/api/v2/pokemon/${lowercaseName}`)
         .then((res) => {
           setSearchedPokemon(res.data);
         })
@@ -44,6 +45,7 @@ function App() {
         });
     }
   }, [searchInput]);
+  
 
   function gotoNextPage() {
     setCurrentPageUrl(nextPageUrl);
@@ -67,7 +69,7 @@ function App() {
         value={searchInput}
         onChange={handleSearchInputChange}
       />
-      {searchedPokemon ? (
+      {searchedPokemon !== null ? (
         <div>
           <h2>{searchedPokemon.name}</h2>
           <img
