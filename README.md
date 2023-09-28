@@ -3,6 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 Basic react app for Pokedex using tutorial https://www.youtube.com/watch?v=o3ZUc7zH8BE
 
+Added a my own search function to the Pokedex app that allows the user to search for a pokemon from the database and displays its image. 
+
 ## Available Scripts
 
 In the project directory, you can run:
